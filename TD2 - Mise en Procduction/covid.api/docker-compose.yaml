@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backend:
+    container_name: 'covid-api'
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_PASSWORD: password
+
+  database:
+    container_name: 'postgres'
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: covid-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
