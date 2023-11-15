@@ -7,7 +7,7 @@ pipeline {
                 // Étape pour construire votre application
                 script {
                     try {
-                        sh '.covid.api/gradlew.bat clean build'
+                        sh './covid.api/gradlew.bat clean build'
                     } catch (Exception gradleError) {
                         echo "Gradle build failed, we will use the old build, proceeding to the next step"
                     }
