@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Application') {
+            steps {
+                // Étape pour construire votre application
+                script {
+                    sh 'gradle build'  
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                // Étape pour construire l'image Docker
+                script {
+                    sh 'docker build -t covid-api .'
+                }
+            }
+        }
+
+        stage('Run Docker Compose') {
+            steps {
+                // Étape pour exécuter docker-compose
+                script {
+                    sh 'docker-compose up -d'
+                }
+            }
+        }
+    }
+}
