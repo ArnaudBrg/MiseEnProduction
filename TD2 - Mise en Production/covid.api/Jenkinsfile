@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Étape pour construire votre application
                 script {
-                    sh 'gradlew clean build'  
+                    sh 'gradle clean build'  
                 }
             }
         }
