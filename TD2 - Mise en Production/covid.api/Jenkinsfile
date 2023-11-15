@@ -1,5 +1,10 @@
 pipeline {
     agent any
+	
+    tools {
+        gradle 'gradle'
+	docker 'docker'
+    }
 
     stages {
         stage('Build Application') {
