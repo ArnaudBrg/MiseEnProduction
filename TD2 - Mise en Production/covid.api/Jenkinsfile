@@ -12,6 +12,7 @@ pipeline {
                 // Étape pour construire votre application
                 script {
                     sh 'gradle build'  
+		}
             }
         }
 
