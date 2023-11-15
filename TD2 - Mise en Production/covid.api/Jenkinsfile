@@ -1,18 +1,16 @@
 pipeline {
     agent any
-	
     tools {
         gradle 'gradle'
 	docker 'docker'
     }
-
     stages {
         stage('Build Application') {
             steps {
                 // Étape pour construire votre application
                 script {
-                    sh 'gradle build'  
-		}
+                    sh 'gradle clean build'  
+                }
             }
         }
 
