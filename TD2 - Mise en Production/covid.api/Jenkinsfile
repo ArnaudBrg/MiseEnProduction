@@ -7,7 +7,7 @@ pipeline {
                 // Étape pour construire votre application
                 script {
                     try {
-                        sh 'gradle clean build'
+                        sh './gradlew.bat clean build'
                     } catch (Exception gradleError) {
                         echo "Gradle build failed, we will use the old build, proceeding to the next step"
                     }
