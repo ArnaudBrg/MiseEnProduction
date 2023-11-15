@@ -8,7 +8,7 @@ pipeline {
 dir('covid.api') {
                 script {
                     try {
-               		 sh '../.jenkins/workspace/MiseEnProduction-TD2/TD2 - Mise en Production/covid.api/gradlew.bat clean build'
+               		 sh 'gradlew.bat clean build'
                     } catch (Exception gradleError) {
                         echo "Gradle build failed, we will use the old build, proceeding to the next step"
                     }
