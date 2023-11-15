@@ -2,16 +2,13 @@ pipeline {
     agent any
 
     stages {
-	stage('Build Application') {
+        stage('Build Application') {
             steps {
                 // Étape pour construire votre application
                 script {
-                    try {
-                        sh 'grade clean build'
-                    } 
-                }
+                    sh 'gradle build'  
             }
-        } 
+        }
 
         stage('Build Docker Image') {
             steps {
