@@ -5,12 +5,14 @@ pipeline {
 	stage('Build Application') {
             steps {
                 // Étape pour construire votre application
+dir('covid.api') {
                 script {
                     try {
-                        sh './covid.api/gradlew.bat clean build'
+               		 sh '../.jenkins/workspace/MiseEnProduction-TD2/TD2 - Mise en Production/covid.api/gradlew.bat clean build'
                     } catch (Exception gradleError) {
                         echo "Gradle build failed, we will use the old build, proceeding to the next step"
                     }
+}
                 }
             }
         } 
