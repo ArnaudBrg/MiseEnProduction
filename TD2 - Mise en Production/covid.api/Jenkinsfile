@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Étape pour construire l'image Docker
                 script {
-            sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
+         	   sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
                 }
             }
         }
