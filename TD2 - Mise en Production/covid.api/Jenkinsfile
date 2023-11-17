@@ -18,8 +18,7 @@ pipeline {
             steps {
                 // Étape pour construire l'image Docker
                 script {
-		    sh 'service docker restart'
-                    sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
+                    docker.build("TD2 - Mise en Production/covid.api");
                 }
             }
         }
@@ -28,7 +27,7 @@ pipeline {
             steps {
                 // Étape pour exécuter docker-compose
                 script {
-                    sh 'docker-compose up -d'
+                    sh 'cd "TD2 - Mise en Production/covid.api" && docker-compose up -d'
                 }
             }
         }
