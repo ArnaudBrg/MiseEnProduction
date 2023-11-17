@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    tools {
+        gradle 'gradle'
+	dockerTool 'docker'
+    }
+    stages {
+        stage('Build Gradle Application') {
+            steps {
+                // Étape pour construire votre application
+                script {
+		    sh 'cd "TD2 - Mise en Production/covid.api" && gradle clean build' 
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                // Étape pour construire l'image Docker
+                script {
+         	   sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
+                }
+            }
+        }
+    }
+}
