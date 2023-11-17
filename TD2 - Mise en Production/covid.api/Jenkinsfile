@@ -5,7 +5,7 @@ pipeline {
 	dockerTool 'docker'
     }
     stages {
-        stage('Build Application') {
+        stage('Build Gradle Application') {
             steps {
                 // Étape pour construire votre application
                 script {
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Étape pour construire l'image Docker
                 script {
-		    sh 'sudo service docker restart'
+		    sh 'service docker restart'
                     sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
                 }
             }
