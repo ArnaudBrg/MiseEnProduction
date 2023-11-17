@@ -23,13 +23,6 @@ pipeline {
             }
         }
 
-        stage('Run Docker Compose') {
-            steps {
-                // Étape pour exécuter docker-compose
-                script {
-                    sh 'cd "TD2 - Mise en Production/covid.api" && docker-compose up -d'
-                }
-            }
-        }
+        
     }
 }
