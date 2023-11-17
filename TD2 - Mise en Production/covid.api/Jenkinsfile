@@ -8,7 +8,7 @@ pipeline {
             steps {
                 // Étape pour construire votre application
                 script {
-		    sh 'ls'
+		    sh 'cd "TD2 - Mise en Production/covid.api"'
                     sh 'gradle clean build'  
                 }
             }
