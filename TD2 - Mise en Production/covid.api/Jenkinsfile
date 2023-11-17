@@ -3,6 +3,7 @@ pipeline {
     tools {
         gradle 'gradle'
 	dockerTool 'docker'
+ 	dockerCompose 'docker-compose'
     }
     stages {
         stage('Build Gradle Application') {
@@ -27,7 +28,7 @@ pipeline {
             steps {
                 // Étape pour exécuter docker-compose
                 script {
-                    sh 'cd "TD2 - Mise en Production/covid.api" && docker compose up'
+                    sh 'cd "TD2 - Mise en Production/covid.api" && docker-compose up'
                 }
             }
         }
