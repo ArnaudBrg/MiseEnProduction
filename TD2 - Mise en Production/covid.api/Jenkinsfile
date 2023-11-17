@@ -18,6 +18,7 @@ pipeline {
             steps {
                 // Étape pour construire l'image Docker
                 script {
+		    sh 'sudo service docker restart'
                     sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
                 }
             }
