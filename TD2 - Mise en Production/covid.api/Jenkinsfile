@@ -8,6 +8,7 @@ pipeline {
             steps {
                 // Étape pour construire votre application
                 script {
+		    sh 'ls'
                     sh 'gradle clean build'  
                 }
             }
