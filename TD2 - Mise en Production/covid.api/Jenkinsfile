@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         gradle 'gradle'
+	docker 'docker'
     }
     stages {
         stage('Build Application') {
@@ -17,7 +18,7 @@ pipeline {
             steps {
                 // Étape pour construire l'image Docker
                 script {
-                    sh 'docker build -t covid-api .'
+                    sh 'cd "TD2 - Mise en Production/covid.api" && docker build -t covid-api .'
                 }
             }
         }
